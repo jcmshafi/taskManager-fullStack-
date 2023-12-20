@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path= require('path');
 
 // Body Parser Implement
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 //if we test in console.log app.use(req => console.log(req.body))
 
 //Security Middleware Declarations
@@ -23,8 +23,12 @@ app.use(mongoSanitize())
 app.use(xssClean())
 app.use(hpp())
 
-app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+// app.use(express.json({limit: '50mb'}));
+// app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+
 
 // Request Rate Limit for user click per second
 const limiter= rateLimit({windowMs:15*60*1000,max:3000})
