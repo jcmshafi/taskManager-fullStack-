@@ -1,0 +1,13 @@
+in server/sec/utility/SendEmail
+
+let transporter = nodemailer.createTransport({
+        host: 'mail.teamrabbil.com',
+        port: 25,
+        secure: true,
+        auth: {
+            user: "info@teamrabbil.com",
+            pass: '~sR4[bhaC[Qs'
+        },tls: {
+            rejectUnauthorized: false
+        },
+    });

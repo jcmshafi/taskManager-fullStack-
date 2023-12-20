@@ -1,0 +1,4 @@
+1. 12 number
+2. 32 number
+3. 70 number
+4. 71 number
