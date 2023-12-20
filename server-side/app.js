@@ -29,9 +29,10 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 
-
+// Enable trust proxy to handle X-Forwarded-For header
+app.set('trust proxy', true);
 // Request Rate Limit for user click per second
-const limiter= rateLimit({windowMs:15*60*1000,max:3000})
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 3000 })
 app.use(limiter)
 
 // Database Declaration and Configuration

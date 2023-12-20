@@ -1,4 +1,4 @@
-const BaseURL="http://localhost:5000/api/v1"
+const BaseURL="https://task-manager-full-stack-1io6.vercel.app/api/v1"
 import axios from 'axios';
 import {ErrorToast, SuccessToast} from "../helper/FormHelper";
 import store from "../redux/store/store";
